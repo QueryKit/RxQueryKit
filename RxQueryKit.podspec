@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   spec.license = { :type => 'BSD', :file => 'LICENSE' }
   spec.author = { 'Kyle Fuller' => 'kyle@fuller.li' }
   spec.social_media_url = 'http://twitter.com/kylefuller'
-  spec.source = { :git => 'https://github.com/kylef/RxQueryKit.git', :tag => spec.version }
+  spec.source = { :git => 'https://github.com/QueryKit/RxQueryKit.git', :tag => spec.version }
   spec.frameworks = ['CoreData']
   spec.source_files = 'RxQueryKit/*.swift'
   spec.ios.deployment_target = '8.0'
