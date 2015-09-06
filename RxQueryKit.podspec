@@ -7,10 +7,12 @@ Pod::Spec.new do |spec|
   spec.author = { 'Kyle Fuller' => 'kyle@fuller.li' }
   spec.social_media_url = 'http://twitter.com/kylefuller'
   spec.source = { :git => 'https://github.com/kylef/RxQueryKit.git', :tag => spec.version }
+  spec.frameworks = ['CoreData']
   spec.source_files = 'RxQueryKit/*.swift'
   spec.ios.deployment_target = '8.0'
   spec.osx.deployment_target = '10.9'
   spec.requires_arc = true
-  spec.dependency 'QueryKit'
+  spec.dependency 'RxSwift', '2.0-alpha.1'
+  #spec.dependency 'QueryKit'
 end
 
