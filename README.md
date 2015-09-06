@@ -1,6 +1,29 @@
 # RxQueryKit
 
+[RxSwift]() extensions for QueryKit.
+
 ## Usage
+
+### QuerySet
+
+RxQueryKit extends QueryKit and provides methods to evaluate and execute
+operations as observables.
+
+```swift
+let queryset = Person.queryset(context).filter(Person.age > 25)
+```
+
+```swift
+queryset.objects().subscribeNext {
+  print($0)
+}
+```
+
+```swift
+queryset.count().subscribeNext {
+  print("There are now \($0) people who are more than 25.")
+}
+```
 
 ### Managed Object Context
 
