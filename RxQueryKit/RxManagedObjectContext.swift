@@ -1,23 +1,7 @@
 import CoreData
 import RxSwift
 
-/*
-@available(OSX 10.4, *)
-public let NSInsertedObjectsKey: String
-@available(OSX 10.4, *)
-public let NSUpdatedObjectsKey: String
-@available(OSX 10.4, *)
-public let NSDeletedObjectsKey: String
 
-@available(OSX 10.5, *)
-public let NSRefreshedObjectsKey: String
-@available(OSX 10.5, *)
-public let NSInvalidatedObjectsKey: String
-
-// User info keys for NSManagedObjectContextObjectsDidChangeNotification:  the values for these keys are arrays of objectIDs
-@available(OSX 10.5, *)
-public let NSInvalidatedAllObjectsKey: String // All objects in the context have been invalidated
-*/
 extension NSNotificationCenter {
   func rx_notification(name: String, object: AnyObject?) -> Observable<NSNotification> {
     return AnonymousObservable { observer in

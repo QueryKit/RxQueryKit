@@ -12,6 +12,7 @@
 		270A33171B9C04DB00AEE90E /* RxQueryKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33161B9C04DB00AEE90E /* RxQueryKitTests.swift */; };
 		270A33221B9C07B100AEE90E /* RxManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33211B9C07B100AEE90E /* RxManagedObjectContext.swift */; settings = {ASSET_TAGS = (); }; };
 		270A33241B9C09A500AEE90E /* RxManagedObjectContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33231B9C09A500AEE90E /* RxManagedObjectContextTests.swift */; settings = {ASSET_TAGS = (); }; };
+		270A33261B9C105000AEE90E /* RxQueryKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33251B9C105000AEE90E /* RxQueryKit.swift */; settings = {ASSET_TAGS = (); }; };
 		63FD81FDCFE39B3CDFDF0774 /* Pods_RxQueryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F2DEC34DCEF2E7340DBC7E /* Pods_RxQueryKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA80A9986F4F0DEDE3B0CEBF /* Pods_RxQueryKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C94D6480DB8DB97DDCE442 /* Pods_RxQueryKitTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		270A33181B9C04DB00AEE90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270A33211B9C07B100AEE90E /* RxManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxManagedObjectContext.swift; sourceTree = "<group>"; };
 		270A33231B9C09A500AEE90E /* RxManagedObjectContextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxManagedObjectContextTests.swift; sourceTree = "<group>"; };
+		270A33251B9C105000AEE90E /* RxQueryKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxQueryKit.swift; sourceTree = "<group>"; };
 		49C94D6480DB8DB97DDCE442 /* Pods_RxQueryKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxQueryKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD66E6607DEF2A439FE0BF4 /* Pods-RxQueryKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxQueryKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxQueryKit/Pods-RxQueryKit.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F2DEC34DCEF2E7340DBC7E /* Pods_RxQueryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxQueryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				270A330A1B9C04DB00AEE90E /* RxQueryKit.h */,
+				270A33251B9C105000AEE90E /* RxQueryKit.swift */,
 				270A33211B9C07B100AEE90E /* RxManagedObjectContext.swift */,
 				270A330C1B9C04DB00AEE90E /* Info.plist */,
 			);
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				270A33221B9C07B100AEE90E /* RxManagedObjectContext.swift in Sources */,
+				270A33261B9C105000AEE90E /* RxQueryKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
