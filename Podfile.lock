@@ -1,52 +1,42 @@
 PODS:
-  - QueryKit (0.10.0):
-    - QueryKit/Attribute (= 0.10.0)
-    - QueryKit/ObjectiveC (= 0.10.0)
-    - QueryKit/QuerySet (= 0.10.0)
-    - QueryKit/Swift (= 0.10.0)
-  - QueryKit/Attribute (0.10.0):
-    - QueryKit/Attribute/Bridge (= 0.10.0)
-    - QueryKit/Attribute/ObjectiveC (= 0.10.0)
-    - QueryKit/Attribute/Swift (= 0.10.0)
-  - QueryKit/Attribute/Bridge (0.10.0):
+  - QueryKit (0.11.0-beta.1):
+    - QueryKit/Attribute (= 0.11.0-beta.1)
+    - QueryKit/ObjectiveC (= 0.11.0-beta.1)
+    - QueryKit/QuerySet (= 0.11.0-beta.1)
+    - QueryKit/Swift (= 0.11.0-beta.1)
+  - QueryKit/Attribute (0.11.0-beta.1):
+    - QueryKit/Attribute/Bridge (= 0.11.0-beta.1)
+    - QueryKit/Attribute/ObjectiveC (= 0.11.0-beta.1)
+    - QueryKit/Attribute/Swift (= 0.11.0-beta.1)
+  - QueryKit/Attribute/Bridge (0.11.0-beta.1):
     - QueryKit/Attribute/ObjectiveC
     - QueryKit/Attribute/Swift
-  - QueryKit/Attribute/ObjectiveC (0.10.0)
-  - QueryKit/Attribute/Swift (0.10.0):
+  - QueryKit/Attribute/ObjectiveC (0.11.0-beta.1)
+  - QueryKit/Attribute/Swift (0.11.0-beta.1):
     - QueryKit/QuerySet/Swift
-  - QueryKit/ObjectiveC (0.10.0):
+  - QueryKit/ObjectiveC (0.11.0-beta.1):
     - QueryKit/Attribute/ObjectiveC
     - QueryKit/QuerySet/ObjectiveC
-  - QueryKit/QuerySet (0.10.0):
-    - QueryKit/QuerySet/Bridge (= 0.10.0)
-    - QueryKit/QuerySet/ObjectiveC (= 0.10.0)
-    - QueryKit/QuerySet/Swift (= 0.10.0)
-  - QueryKit/QuerySet/Bridge (0.10.0):
+  - QueryKit/QuerySet (0.11.0-beta.1):
+    - QueryKit/QuerySet/Bridge (= 0.11.0-beta.1)
+    - QueryKit/QuerySet/ObjectiveC (= 0.11.0-beta.1)
+    - QueryKit/QuerySet/Swift (= 0.11.0-beta.1)
+  - QueryKit/QuerySet/Bridge (0.11.0-beta.1):
     - QueryKit/QuerySet/ObjectiveC
     - QueryKit/QuerySet/Swift
-  - QueryKit/QuerySet/ObjectiveC (0.10.0)
-  - QueryKit/QuerySet/Swift (0.10.0)
-  - QueryKit/Swift (0.10.0):
+  - QueryKit/QuerySet/ObjectiveC (0.11.0-beta.1)
+  - QueryKit/QuerySet/Swift (0.11.0-beta.1)
+  - QueryKit/Swift (0.11.0-beta.1):
     - QueryKit/Attribute/Swift
     - QueryKit/QuerySet/Swift
   - RxSwift (2.0-alpha.1)
 
 DEPENDENCIES:
-  - QueryKit (from `https://github.com/QueryKit/QueryKit`, branch `swift-2.0`)
+  - QueryKit (~> 0.11.0-beta.1)
   - RxSwift (= 2.0-alpha.1)
 
-EXTERNAL SOURCES:
-  QueryKit:
-    :branch: swift-2.0
-    :git: https://github.com/QueryKit/QueryKit
-
-CHECKOUT OPTIONS:
-  QueryKit:
-    :commit: 17120ec9479492a46457915a5dc0cfbb461e4ec3
-    :git: https://github.com/QueryKit/QueryKit
-
 SPEC CHECKSUMS:
-  QueryKit: 50e0bcd535d23d320c3ad9f067c6a60bbdb5c27a
+  QueryKit: f61e84faac3b4cf1345ee06ecf1920932629b10a
   RxSwift: 48982aff7a725bc6d0799aae6d539f360b940ff4
 
 COCOAPODS: 0.39.0.beta.4

@@ -1,6 +1,6 @@
 # RxQueryKit
 
-[RxSwift]() extensions for QueryKit.
+[RxSwift](https://github.com/ReactiveX/RxSwift) extensions for QueryKit.
 
 ## Usage
 
