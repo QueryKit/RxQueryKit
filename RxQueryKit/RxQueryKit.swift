@@ -9,7 +9,7 @@ extension QuerySet {
   /// Performs a query for all objects matching the set predicate ordered by any set sort descriptors.
   /// Emits a value with an array of all objects when the managed object context is changed.
   public func objects() throws -> Observable<[ModelType]> {
-    return context.qk_objectsDidChange().map { [unowned self] notification in
+    return context.qk_objectsDidChange().map { notification in
       return try self.array()
     }.startWith(try self.array())
   }
