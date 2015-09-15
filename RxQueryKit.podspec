@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'RxQueryKit'
-  spec.version = '0.2.1'
+  spec.version = '0.2.2'
   spec.summary = 'RxSwift extensions for dealing with QueryKit'
   spec.homepage = 'https://github.com/QueryKit/RxQueryKit'
   spec.license = { :type => 'BSD', :file => 'LICENSE' }
@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '8.0'
   spec.osx.deployment_target = '10.9'
   spec.requires_arc = true
-  spec.dependency 'RxSwift', '2.0-alpha.3'
+  spec.dependency 'RxSwift', '2.0.0-alpha.3'
   spec.dependency 'QueryKit', '~> 0.11.0'
 end
 
