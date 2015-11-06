@@ -6,7 +6,7 @@ class RxManagedObjectContextTests: XCTestCase {
     let context = NSManagedObjectContext()
 
     let expectation = expectationWithDescription("Objects Did Change Notification")
-    context.qk_objectsDidChange().subscribeNext { [unowned context] notification in
+    let _ = context.qk_objectsDidChange().subscribeNext { [unowned context] notification in
       XCTAssertEqual(notification.managedObjectContext, context)
       expectation.fulfill()
     }
@@ -19,7 +19,7 @@ class RxManagedObjectContextTests: XCTestCase {
     let context = NSManagedObjectContext()
 
     let expectation = expectationWithDescription("Will Save Notification")
-    context.qk_willSave().subscribeNext { [unowned context] managedObjectContext in
+    let _ = context.qk_willSave().subscribeNext { [unowned context] managedObjectContext in
       XCTAssertEqual(managedObjectContext, context)
       expectation.fulfill()
     }
@@ -32,7 +32,7 @@ class RxManagedObjectContextTests: XCTestCase {
     let context = NSManagedObjectContext()
 
     let expectation = expectationWithDescription("Did Save Notification")
-    context.qk_didSave().subscribeNext { [unowned context] notification in
+    let _ = context.qk_didSave().subscribeNext { [unowned context] notification in
       XCTAssertEqual(notification.managedObjectContext, context)
       expectation.fulfill()
     }
