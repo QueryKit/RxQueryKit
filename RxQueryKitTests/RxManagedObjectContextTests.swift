@@ -1,7 +1,10 @@
 import XCTest
+import RxSwift
 import RxQueryKit
 
 class RxManagedObjectContextTests: XCTestCase {
+  let disposeBag = DisposeBag()
+
   func testObjectsDidChangeNotification() {
     let context = NSManagedObjectContext()
 
@@ -9,7 +12,7 @@ class RxManagedObjectContextTests: XCTestCase {
     context.qk_objectsDidChange().subscribeNext { [unowned context] notification in
       XCTAssertEqual(notification.managedObjectContext, context)
       expectation.fulfill()
-    }
+    }.addDisposableTo(disposeBag)
 
     NSNotificationCenter.defaultCenter().postNotificationName(NSManagedObjectContextObjectsDidChangeNotification, object: context, userInfo: [:])
     waitForExpectationsWithTimeout(1.0, handler: nil)
@@ -22,7 +25,7 @@ class RxManagedObjectContextTests: XCTestCase {
     context.qk_willSave().subscribeNext { [unowned context] managedObjectContext in
       XCTAssertEqual(managedObjectContext, context)
       expectation.fulfill()
-    }
+    }.addDisposableTo(disposeBag)
 
     NSNotificationCenter.defaultCenter().postNotificationName(NSManagedObjectContextWillSaveNotification, object: context, userInfo: [:])
     waitForExpectationsWithTimeout(1.0, handler: nil)
@@ -35,7 +38,7 @@ class RxManagedObjectContextTests: XCTestCase {
     context.qk_didSave().subscribeNext { [unowned context] notification in
       XCTAssertEqual(notification.managedObjectContext, context)
       expectation.fulfill()
-    }
+    }.addDisposableTo(disposeBag)
 
     NSNotificationCenter.defaultCenter().postNotificationName(NSManagedObjectContextDidSaveNotification, object: context, userInfo: [:])
     waitForExpectationsWithTimeout(1.0, handler: nil)

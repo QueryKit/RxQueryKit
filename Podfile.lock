@@ -1,42 +1,13 @@
 PODS:
-  - QueryKit (0.11.0-beta.1):
-    - QueryKit/Attribute (= 0.11.0-beta.1)
-    - QueryKit/ObjectiveC (= 0.11.0-beta.1)
-    - QueryKit/QuerySet (= 0.11.0-beta.1)
-    - QueryKit/Swift (= 0.11.0-beta.1)
-  - QueryKit/Attribute (0.11.0-beta.1):
-    - QueryKit/Attribute/Bridge (= 0.11.0-beta.1)
-    - QueryKit/Attribute/ObjectiveC (= 0.11.0-beta.1)
-    - QueryKit/Attribute/Swift (= 0.11.0-beta.1)
-  - QueryKit/Attribute/Bridge (0.11.0-beta.1):
-    - QueryKit/Attribute/ObjectiveC
-    - QueryKit/Attribute/Swift
-  - QueryKit/Attribute/ObjectiveC (0.11.0-beta.1)
-  - QueryKit/Attribute/Swift (0.11.0-beta.1):
-    - QueryKit/QuerySet/Swift
-  - QueryKit/ObjectiveC (0.11.0-beta.1):
-    - QueryKit/Attribute/ObjectiveC
-    - QueryKit/QuerySet/ObjectiveC
-  - QueryKit/QuerySet (0.11.0-beta.1):
-    - QueryKit/QuerySet/Bridge (= 0.11.0-beta.1)
-    - QueryKit/QuerySet/ObjectiveC (= 0.11.0-beta.1)
-    - QueryKit/QuerySet/Swift (= 0.11.0-beta.1)
-  - QueryKit/QuerySet/Bridge (0.11.0-beta.1):
-    - QueryKit/QuerySet/ObjectiveC
-    - QueryKit/QuerySet/Swift
-  - QueryKit/QuerySet/ObjectiveC (0.11.0-beta.1)
-  - QueryKit/QuerySet/Swift (0.11.0-beta.1)
-  - QueryKit/Swift (0.11.0-beta.1):
-    - QueryKit/Attribute/Swift
-    - QueryKit/QuerySet/Swift
-  - RxSwift (2.0-alpha.1)
+  - QueryKit (0.12.1)
+  - RxSwift (2.0.0-beta.3)
 
 DEPENDENCIES:
-  - QueryKit (~> 0.11.0-beta.1)
-  - RxSwift (= 2.0-alpha.1)
+  - QueryKit (~> 0.12.0)
+  - RxSwift (= 2.0.0-beta.3)
 
 SPEC CHECKSUMS:
-  QueryKit: f61e84faac3b4cf1345ee06ecf1920932629b10a
-  RxSwift: 48982aff7a725bc6d0799aae6d539f360b940ff4
+  QueryKit: 6a8dbe9f33ffac00c424143695681a949b58518d
+  RxSwift: 19fbe885b404d1d36d42ac8535134739a9b42952
 
-COCOAPODS: 0.39.0.beta.4
+COCOAPODS: 0.39.0

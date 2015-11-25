@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		270A330B1B9C04DB00AEE90E /* RxQueryKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 270A330A1B9C04DB00AEE90E /* RxQueryKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		270A33121B9C04DB00AEE90E /* RxQueryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270A33071B9C04DB00AEE90E /* RxQueryKit.framework */; settings = {ASSET_TAGS = (); }; };
+		270A33121B9C04DB00AEE90E /* RxQueryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270A33071B9C04DB00AEE90E /* RxQueryKit.framework */; };
 		270A33171B9C04DB00AEE90E /* RxQueryKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33161B9C04DB00AEE90E /* RxQueryKitTests.swift */; };
-		270A33221B9C07B100AEE90E /* RxManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33211B9C07B100AEE90E /* RxManagedObjectContext.swift */; settings = {ASSET_TAGS = (); }; };
-		270A33241B9C09A500AEE90E /* RxManagedObjectContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33231B9C09A500AEE90E /* RxManagedObjectContextTests.swift */; settings = {ASSET_TAGS = (); }; };
-		270A33261B9C105000AEE90E /* RxQueryKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33251B9C105000AEE90E /* RxQueryKit.swift */; settings = {ASSET_TAGS = (); }; };
-		63FD81FDCFE39B3CDFDF0774 /* Pods_RxQueryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F2DEC34DCEF2E7340DBC7E /* Pods_RxQueryKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		FA80A9986F4F0DEDE3B0CEBF /* Pods_RxQueryKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C94D6480DB8DB97DDCE442 /* Pods_RxQueryKitTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		270A33221B9C07B100AEE90E /* RxManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33211B9C07B100AEE90E /* RxManagedObjectContext.swift */; };
+		270A33241B9C09A500AEE90E /* RxManagedObjectContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33231B9C09A500AEE90E /* RxManagedObjectContextTests.swift */; };
+		270A33261B9C105000AEE90E /* RxQueryKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A33251B9C105000AEE90E /* RxQueryKit.swift */; };
+		63FD81FDCFE39B3CDFDF0774 /* Pods_RxQueryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F2DEC34DCEF2E7340DBC7E /* Pods_RxQueryKit.framework */; };
+		FA80A9986F4F0DEDE3B0CEBF /* Pods_RxQueryKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C94D6480DB8DB97DDCE442 /* Pods_RxQueryKitTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
