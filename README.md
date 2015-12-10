@@ -42,18 +42,18 @@ It provides a type safe structure providing the changes objects.
 
 ```swift
 context.qk_objectsDidChange().subscribeNext { notification in
-  print('Objects did change:')
+  print("Objects did change:")
   print(notification.insertedObjects)
   print(notification.updatedObjects)
   print(notification.deletedObjects)
 }
 
 context.qk_willSave().subscribeNext { notification in
-  print('Context will save')
+  print("Context will save")
 }
 
 context.qk_didSave().subscribeNext { notification in
-  print('Context did save')
+  print("Context did save")
 }
 ```
 
