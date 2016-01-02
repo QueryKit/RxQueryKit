@@ -19,7 +19,7 @@ extension QuerySet {
   public func count() throws -> Observable<Int> {
     var count:Int = try self.count()
 
-    return create { observer in
+    return Observable.create { observer in
       observer.on(.Next(count))
 
       return self.context.qk_objectsDidChange().subscribeNext { notification in
