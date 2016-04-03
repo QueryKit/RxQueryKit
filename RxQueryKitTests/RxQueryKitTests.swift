@@ -45,6 +45,11 @@ class RxQueryKitTests: XCTestCase {
     try! context.save()
     XCTAssertEqual(counts, [0, 3, 1])
 
+    // Doesn't update when nothing changes
+    Comment.create(context, text: "Hello World")
+    try! context.save()
+    XCTAssertEqual(counts, [0, 3, 1])
+
     disposable.dispose()
   }
 }
@@ -88,7 +93,15 @@ class RxQueryKitTests: XCTestCase {
     let entity = NSEntityDescription()
     entity.name = "Comment"
     entity.managedObjectClassName = "Comment"
+    entity.properties = [text]
     return entity
+  }
+
+  class func create(context: NSManagedObjectContext, text: String) -> Comment {
+    let entity = NSEntityDescription.entityForName("Comment", inManagedObjectContext: context)!
+    let comment = Comment(entity: entity, insertIntoManagedObjectContext: context)
+    comment.text = text
+    return comment
   }
 
   @NSManaged var text: String

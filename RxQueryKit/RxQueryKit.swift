@@ -17,7 +17,7 @@ extension QuerySet {
   /// Performs a query for the count of all objects matching the set predicate.
   /// Emits an Int containing the amount of objects matching the predicate and updates when the managed object context is changed.
   public func count() throws -> Observable<Int> {
-    var count:Int = try self.count()
+    var count: Int = try self.count()
 
     return Observable.create { observer in
       observer.on(.Next(count))
@@ -30,15 +30,20 @@ extension QuerySet {
           $0.entity.name == self.entityName
         }
 
+        var delta = 0
+
         if let predicate = self.predicate {
-          count += (insertedObjects as NSArray).filteredArrayUsingPredicate(predicate).count
-          count -= (deletedObjects as NSArray).filteredArrayUsingPredicate(predicate).count
+          delta += (insertedObjects as NSArray).filteredArrayUsingPredicate(predicate).count
+          delta -= (deletedObjects as NSArray).filteredArrayUsingPredicate(predicate).count
         } else {
-          count += insertedObjects.count
-          count -= deletedObjects.count
+          delta += insertedObjects.count
+          delta -= deletedObjects.count
         }
 
-        observer.on(.Next(count))
+        if delta != 0 {
+          count += delta
+          observer.on(.Next(count))
+        }
       }
     }
   }
