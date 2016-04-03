@@ -52,10 +52,55 @@ class RxQueryKitTests: XCTestCase {
 
     disposable.dispose()
   }
+
+  func testObjects() {
+    var objects: [[Person]] = []
+
+    let disposable = try! Person.queryset(context)
+      .orderBy { $0.name.ascending() }
+      .objects()
+      .subscribeNext {
+        objects.append($0)
+      }
+
+    // Initial value
+    XCTAssertEqual(objects, [[]])
+
+    // Created
+    let p1 = Person.create(context, name: "kyle1")
+    let p2 = Person.create(context, name: "kyle2")
+    let p3 = Person.create(context, name: "kyle3")
+    try! context.save()
+    XCTAssertEqual(objects, [[], [p1, p2, p3]])
+
+    // Deleted
+    context.deleteObject(p1)
+    context.deleteObject(p3)
+    try! context.save()
+    XCTAssertEqual(objects, [[], [p1, p2, p3], [p2]])
+
+    // Modified Object
+    context.deleteObject(p1)
+    context.deleteObject(p3)
+    p2.name = "kyle updated"
+    try! context.save()
+    XCTAssertEqual(objects, [[], [p1, p2, p3], [p2], [p2]])
+
+    // Doesn't update when nothing changes
+    Comment.create(context, text: "Hello World")
+    try! context.save()
+    XCTAssertEqual(objects, [[], [p1, p2, p3], [p2], [p2]])
+
+    disposable.dispose()
+  }
 }
 
 
 @objc(Person) class Person : NSManagedObject {
+  class var name:Attribute<String> {
+    return Attribute("name")
+  }
+
   class func createEntityDescription() -> NSEntityDescription {
     let name = NSAttributeDescription()
     name.name = "name"
