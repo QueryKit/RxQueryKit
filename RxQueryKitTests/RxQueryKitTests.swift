@@ -53,6 +53,45 @@ class RxQueryKitTests: XCTestCase {
     disposable.dispose()
   }
 
+  func testCountWithPredicate() {
+    var counts: [Int] = []
+    let disposable = try! Person.queryset(context)
+      .filter { $0.name != "kyle" }
+      .count()
+      .subscribeNext {
+        counts.append($0)
+      }
+
+    // Initial value
+    XCTAssertEqual(counts, [0])
+
+    // Created
+    let p1 = Person.create(context, name: "kyle1")
+    Person.create(context, name: "kyle2")
+    let p3 = Person.create(context, name: "kyle3")
+    let p4 = Person.create(context, name: "kyle")
+    try! context.save()
+    XCTAssertEqual(counts, [0, 3])
+
+    // Deleted
+    context.deleteObject(p1)
+    context.deleteObject(p3)
+    try! context.save()
+    XCTAssertEqual(counts, [0, 3, 1])
+
+    // Doesn't update when nothing changes
+    Comment.create(context, text: "Hello World")
+    try! context.save()
+    XCTAssertEqual(counts, [0, 3, 1])
+
+    // Modify comes into count
+    p4.name = "kyle4"
+    try! context.save()
+    XCTAssertEqual(counts, [0, 3, 1, 2])
+
+    disposable.dispose()
+  }
+
   func testObjects() {
     var objects: [[Person]] = []
 

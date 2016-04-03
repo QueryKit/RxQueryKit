@@ -1,5 +1,12 @@
 # RxQueryKit
 
+## Master
+
+### Bug Fixes
+
+- Fixes a bug where `count()` using a predicate may have not counted objects
+  that have been modified to come into the predicate.
+
 ## 0.5.2
 
 ### Bug Fixes

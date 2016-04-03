@@ -48,6 +48,20 @@ extension QuerySet {
       observer.on(.Next(count))
 
       return self.context.qk_objectsDidChange().subscribeNext { notification in
+        let updatedObjects = notification.updatedObjects.filter {
+          $0.entity.name == self.entityName
+        }
+
+        if !updatedObjects.isEmpty {
+          do {
+            count = try self.count()
+            observer.onNext(count)
+          } catch {
+            observer.onError(error)
+          }
+          return
+        }
+
         let insertedObjects = notification.insertedObjects.filter {
           $0.entity.name == self.entityName
         }
