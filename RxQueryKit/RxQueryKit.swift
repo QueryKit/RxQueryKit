@@ -32,9 +32,9 @@ extension QuerySet {
 
         if let predicate = self.predicate {
           count += (insertedObjects as NSArray).filteredArrayUsingPredicate(predicate).count
-          count += (deletedObjects as NSArray).filteredArrayUsingPredicate(predicate).count
+          count -= (deletedObjects as NSArray).filteredArrayUsingPredicate(predicate).count
         } else {
-          count -= insertedObjects.count
+          count += insertedObjects.count
           count -= deletedObjects.count
         }
 

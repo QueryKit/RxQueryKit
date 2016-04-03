@@ -1,36 +1,95 @@
-//
-//  RxQueryKitTests.swift
-//  RxQueryKitTests
-//
-//  Created by Kyle Fuller on 05/09/2015.
-//  Copyright © 2015 Cocode. All rights reserved.
-//
-
 import XCTest
-@testable import RxQueryKit
+import CoreData
+import QueryKit
+import RxQueryKit
+
 
 class RxQueryKitTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+  var context: NSManagedObjectContext!
+
+  override func setUp() {
+    let model = NSManagedObjectModel()
+    model.entities = [Person.createEntityDescription(), Comment.createEntityDescription()]
+    let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
+    try! persistentStoreCoordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil)
+    context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    context.persistentStoreCoordinator = persistentStoreCoordinator
+  }
+
+  // Make sure we've configure our store and model correctly
+  func testCoreData() {
+    let person = Person.create(context, name: "kyle")
+    XCTAssertEqual(person.name, "kyle")
+  }
+
+  func testCount() {
+    var counts: [Int] = []
+    let queryset = Person.queryset(context)
+    let disposable = try! queryset.count().subscribeNext {
+      counts.append($0)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
+    // Initial value
+    XCTAssertEqual(counts, [0])
+
+    // Created
+    let p1 = Person.create(context, name: "kyle1")
+    Person.create(context, name: "kyle2")
+    let p3 = Person.create(context, name: "kyle3")
+    try! context.save()
+    XCTAssertEqual(counts, [0, 3])
+
+    // Deleted
+    context.deleteObject(p1)
+    context.deleteObject(p3)
+    try! context.save()
+    XCTAssertEqual(counts, [0, 3, 1])
+
+    disposable.dispose()
+  }
+}
+
+
+@objc(Person) class Person : NSManagedObject {
+  class func createEntityDescription() -> NSEntityDescription {
+    let name = NSAttributeDescription()
+    name.name = "name"
+    name.attributeType = .StringAttributeType
+    name.optional = false
+
+    let entity = NSEntityDescription()
+    entity.name = "Person"
+    entity.managedObjectClassName = "Person"
+    entity.properties = [name]
+    return entity
+  }
+
+  class func queryset(context: NSManagedObjectContext) -> QuerySet<Person> {
+    return QuerySet(context, "Person")
+  }
+
+  class func create(context: NSManagedObjectContext, name: String) -> Person {
+    let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: context)!
+    let person = Person(entity: entity, insertIntoManagedObjectContext: context)
+    person.name = name
+    return person
+  }
+
+  @NSManaged var name: String
+}
+
+@objc(Comment) class Comment : NSManagedObject {
+  class func createEntityDescription() -> NSEntityDescription {
+    let text = NSAttributeDescription()
+    text.name = "text"
+    text.attributeType = .StringAttributeType
+    text.optional = false
+
+    let entity = NSEntityDescription()
+    entity.name = "Comment"
+    entity.managedObjectClassName = "Comment"
+    return entity
+  }
+
+  @NSManaged var text: String
 }
