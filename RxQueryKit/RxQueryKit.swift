@@ -52,7 +52,7 @@ extension QuerySet {
           $0.entity.name == self.entityName
         }
 
-        if !updatedObjects.isEmpty {
+        if !updatedObjects.isEmpty && self.predicate != nil {
           do {
             count = try self.count()
             observer.onNext(count)
