@@ -1,6 +1,6 @@
 # RxQueryKit
 
-## Master
+## 0.5.3
 
 ### Bug Fixes
 
