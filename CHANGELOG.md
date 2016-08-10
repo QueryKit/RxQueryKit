@@ -6,6 +6,8 @@
 
 - Fixes a bug where `count()` using a predicate may have not counted objects
   that have been modified to come into the predicate.
+- QuerySet subscriptions will now correctly handle abstract and sub entities
+  for managed objects.
 
 ## 0.5.2
 
