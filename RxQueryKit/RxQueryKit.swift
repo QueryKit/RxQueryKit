@@ -4,7 +4,7 @@ import QueryKit
 import Foundation
 
 
-private func managedObjectMatchesEntity(entityNames: [String]) -> (NSManagedObject) -> Bool {
+private func managedObjectMatchesEntity(_ entityNames: [String]) -> (NSManagedObject) -> Bool {
   return { object in
     if let name = object.entity.name {
       return entityNames.contains(name)
@@ -17,8 +17,8 @@ private func managedObjectMatchesEntity(entityNames: [String]) -> (NSManagedObje
 
 /// Extension to QuerySet to provide observables
 extension QuerySet {
-  private var entityNames: [String] {
-    if let entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext: context) {
+  fileprivate var entityNames: [String] {
+    if let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) {
       return [entityName] + entity.subentitiesByName.keys
     }
 
@@ -32,9 +32,9 @@ extension QuerySet {
     let filter = managedObjectMatchesEntity(entityNames)
 
     return Observable.create { observer in
-      observer.on(.Next(initial))
+      observer.on(.next(initial))
 
-      return self.context.qk_objectsDidChange().subscribeNext { notification in
+      return self.context.qk_objectsDidChange().subscribe(onNext: { notification in
         let insertedObjects = notification.insertedObjects.filter(filter)
         let updatedObjects = notification.updatedObjects.filter(filter)
         let deletedObjects = notification.deletedObjects.filter(filter)
@@ -49,7 +49,7 @@ extension QuerySet {
         } catch {
           observer.onError(error)
         }
-      }
+      })
     }
   }
 
@@ -60,9 +60,9 @@ extension QuerySet {
     let filter = managedObjectMatchesEntity(entityNames)
 
     return Observable.create { observer in
-      observer.on(.Next(count))
+      observer.on(.next(count))
 
-      return self.context.qk_objectsDidChange().subscribeNext { notification in
+      return self.context.qk_objectsDidChange().subscribe(onNext: { notification in
         let updatedObjects = notification.updatedObjects.filter(filter)
 
         if !updatedObjects.isEmpty && self.predicate != nil {
@@ -81,8 +81,8 @@ extension QuerySet {
         var delta = 0
 
         if let predicate = self.predicate {
-          delta += (insertedObjects as NSArray).filteredArrayUsingPredicate(predicate).count
-          delta -= (deletedObjects as NSArray).filteredArrayUsingPredicate(predicate).count
+          delta += (insertedObjects as NSArray).filtered(using: predicate).count
+          delta -= (deletedObjects as NSArray).filtered(using: predicate).count
         } else {
           delta += insertedObjects.count
           delta -= deletedObjects.count
@@ -90,9 +90,9 @@ extension QuerySet {
 
         if delta != 0 {
           count += delta
-          observer.on(.Next(count))
+          observer.on(.next(count))
         }
-      }
+      })
     }
   }
 }
