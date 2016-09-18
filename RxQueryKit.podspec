@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'RxQueryKit'
-  spec.version = '0.5.3'
+  spec.version = '0.6.0'
   spec.summary = 'RxSwift extensions for dealing with QueryKit'
   spec.homepage = 'https://github.com/QueryKit/RxQueryKit'
   spec.license = { :type => 'BSD', :file => 'LICENSE' }

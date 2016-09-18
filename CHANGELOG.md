@@ -1,5 +1,11 @@
 # RxQueryKit
 
+## 0.6.0
+
+### Enhancements
+
+- Adds support for Swift 3.0.
+
 ## 0.5.3
 
 ### Bug Fixes
