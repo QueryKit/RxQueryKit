@@ -1,5 +1,9 @@
 # RxQueryKit
 
+## 0.6.1
+
+- Supports RxSwift 3 stable.
+
 ## 0.6.0
 
 ### Enhancements
