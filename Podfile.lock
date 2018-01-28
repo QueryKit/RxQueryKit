@@ -1,14 +1,14 @@
 PODS:
   - QueryKit (0.13.0)
-  - RxSwift (3.0.1)
+  - RxSwift (4.1.1)
 
 DEPENDENCIES:
   - QueryKit (~> 0.13.0)
-  - RxSwift (~> 3.0)
+  - RxSwift (~> 4.1.1)
 
 SPEC CHECKSUMS:
   QueryKit: 406c42b9b4eb5f8dab380a9e5bd9ef656542d1f4
-  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
 
 PODFILE CHECKSUM: c654bc3cb69caf3e277e1e5664a489d7a2bba3f7
 
