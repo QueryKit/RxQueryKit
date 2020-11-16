@@ -1,5 +1,16 @@
 # RxQueryKit
 
+## TBD
+
+### Breaking Changes
+
+- Support for Swift < 5 has been removed.
+
+### Enhancements
+
+- Support for Swift 5.
+- Support for QueryKit 0.14 and RxSwift ~> 5.1
+
 ## 0.6.1
 
 - Supports RxSwift 3 stable.
