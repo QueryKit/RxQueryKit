@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '8.0'
   spec.osx.deployment_target = '10.10'
   spec.requires_arc = true
-  spec.dependency 'RxSwift', '~> 4.1.1'
-  spec.dependency 'QueryKit', '~> 0.13.0'
+  spec.dependency 'RxSwift', '~> 5.1'
+  spec.dependency 'QueryKit', '~> 0.14.0'
 end
 

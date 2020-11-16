@@ -150,7 +150,6 @@
 				270A33031B9C04DB00AEE90E /* Frameworks */,
 				270A33041B9C04DB00AEE90E /* Headers */,
 				270A33051B9C04DB00AEE90E /* Resources */,
-				F09D3DB094EFC5663B80E639 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,7 +169,6 @@
 				270A330E1B9C04DB00AEE90E /* Frameworks */,
 				270A330F1B9C04DB00AEE90E /* Resources */,
 				DA4CCE7371ABB70631D328C3 /* [CP] Embed Pods Frameworks */,
-				3BC02F63124C6EDC79BACE74 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +205,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 270A32FD1B9C04DB00AEE90E;
@@ -238,21 +237,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3BC02F63124C6EDC79BACE74 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxQueryKitTests/Pods-RxQueryKitTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4A49C53589E4FBA9A4CBE17C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,7 +261,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxQueryKitTests/Pods-RxQueryKitTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RxQueryKitTests/Pods-RxQueryKitTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/QueryKit/QueryKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -288,22 +272,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxQueryKitTests/Pods-RxQueryKitTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F09D3DB094EFC5663B80E639 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxQueryKit/Pods-RxQueryKit-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxQueryKitTests/Pods-RxQueryKitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE3088AC840699CE3BDF61C8 /* [CP] Check Pods Manifest.lock */ = {
@@ -397,6 +366,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -435,6 +405,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -458,7 +429,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -479,7 +449,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocode.RxQueryKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -492,7 +461,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocode.RxQueryKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -505,7 +473,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocode.RxQueryKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -56,7 +56,7 @@ class RxQueryKitTests: XCTestCase {
   func testCountWithPredicate() {
     var counts: [Int] = []
     let disposable = try! Person.queryset(context)
-      .filter { $0.name != "kyle" }
+      .filter(\.name != "kyle")
       .count()
       .subscribe(onNext: {
         counts.append($0)

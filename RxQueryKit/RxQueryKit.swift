@@ -81,8 +81,8 @@ extension QuerySet {
         var delta = 0
 
         if let predicate = self.predicate {
-          delta += (insertedObjects as NSArray).filtered(using: predicate).count
-          delta -= (deletedObjects as NSArray).filtered(using: predicate).count
+          delta += insertedObjects.filter(predicate.evaluate).count
+          delta -= deletedObjects.filter(predicate.evaluate).count
         } else {
           delta += insertedObjects.count
           delta -= deletedObjects.count

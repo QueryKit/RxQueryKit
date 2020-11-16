@@ -12,7 +12,7 @@ class RxManagedObjectContextTests: XCTestCase {
     context.qk_objectsDidChange().subscribe(onNext: { [unowned context] notification in
       XCTAssertEqual(notification.managedObjectContext, context)
       expectation.fulfill()
-    }).addDisposableTo(disposeBag)
+    }).disposed(by: disposeBag)
 
     NotificationCenter.default.post(name: NSNotification.Name.NSManagedObjectContextObjectsDidChange, object: context, userInfo: [:])
     waitForExpectations(timeout: 1.0, handler: nil)
@@ -25,7 +25,7 @@ class RxManagedObjectContextTests: XCTestCase {
     context.qk_willSave().subscribe(onNext: { [unowned context] managedObjectContext in
       XCTAssertEqual(managedObjectContext, context)
       expectation.fulfill()
-    }).addDisposableTo(disposeBag)
+    }).disposed(by: disposeBag)
 
     NotificationCenter.default.post(name: NSNotification.Name.NSManagedObjectContextWillSave, object: context, userInfo: [:])
     waitForExpectations(timeout: 1.0, handler: nil)
@@ -38,7 +38,7 @@ class RxManagedObjectContextTests: XCTestCase {
     context.qk_didSave().subscribe(onNext: { [unowned context] notification in
       XCTAssertEqual(notification.managedObjectContext, context)
       expectation.fulfill()
-    }).addDisposableTo(disposeBag)
+    }).disposed(by: disposeBag)
 
     NotificationCenter.default.post(name: NSNotification.Name.NSManagedObjectContextDidSave, object: context, userInfo: [:])
     waitForExpectations(timeout: 1.0, handler: nil)

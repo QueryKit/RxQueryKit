@@ -17,11 +17,11 @@ extension NotificationCenter {
 }
 
 
-open class RxManagedObjectContextNotification {
-  open let managedObjectContext: NSManagedObjectContext
-  open let insertedObjects: Set<NSManagedObject>
-  open let updatedObjects: Set<NSManagedObject>
-  open let deletedObjects: Set<NSManagedObject>
+public class RxManagedObjectContextNotification {
+  public let managedObjectContext: NSManagedObjectContext
+  public let insertedObjects: Set<NSManagedObject>
+  public let updatedObjects: Set<NSManagedObject>
+  public let deletedObjects: Set<NSManagedObject>
 
   init(notification: Notification) {
     managedObjectContext = notification.object as! NSManagedObjectContext

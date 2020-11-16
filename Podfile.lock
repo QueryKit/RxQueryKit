@@ -1,15 +1,20 @@
 PODS:
-  - QueryKit (0.13.0)
-  - RxSwift (4.1.1)
+  - QueryKit (0.14.1)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
-  - QueryKit (~> 0.13.0)
-  - RxSwift (~> 4.1.1)
+  - QueryKit (~> 0.14.0)
+  - RxSwift (~> 5.1)
+
+SPEC REPOS:
+  trunk:
+    - QueryKit
+    - RxSwift
 
 SPEC CHECKSUMS:
-  QueryKit: 406c42b9b4eb5f8dab380a9e5bd9ef656542d1f4
-  RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
+  QueryKit: 60dae8ff75d5805f9c703c68c0ef4294c9dd7de6
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
 PODFILE CHECKSUM: c654bc3cb69caf3e277e1e5664a489d7a2bba3f7
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.10.0
