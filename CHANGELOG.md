@@ -1,5 +1,12 @@
 # RxQueryKit
 
+## 0.7.1
+
+### Enhancements
+
+- Compatibility with RxSwift 6.
+
+
 ## 0.7.0
 
 ### Breaking Changes
